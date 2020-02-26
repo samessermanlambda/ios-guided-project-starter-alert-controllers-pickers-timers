@@ -73,16 +73,22 @@ extension CountdownViewController: CountdownDelegate {
 
 extension CountdownViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        #warning("Change this to return the number of components for the picker view")
-        return 0
+        return countdownPickerData.count // 4
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        #warning("Change this to return the number of rows per component in the picker view")
-        return 0
+        
+        // This is accessing the number of elements in each "smaller", internal array
+        return countdownPickerData[component].count
     }
 }
 
 extension CountdownViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        <#code#>
+    }
     
 }
